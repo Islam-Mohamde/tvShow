@@ -11,20 +11,17 @@ const ShowState = (props) => {
   };
 
   const [state, dispatch] = useReducer(ShowReducer, initialState);
-
+  console.log(state.activeShow);
   const searchShowes = async (searchTerm) => {
     dispatch({ type: "SET_LOADING" });
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${searchTerm}`
     );
-    console.log(data);
     dispatch({ type: "SEARCH_SHOWS", payload: data });
   };
   const getActiveShow = async (id) => {
     dispatch({ type: "SET_LOADING" });
-    const { data } = await axios.get(
-      `https://api.tvmaze.com/search/shows?q=${id}`
-    );
+    const { data } = await axios.get(`https://api.tvmaze.com/shows/${id}`);
     console.log(data);
     dispatch({ type: "SET_ACTIVE_SHOWS", payload: data });
   };

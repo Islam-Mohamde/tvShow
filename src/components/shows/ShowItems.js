@@ -11,6 +11,7 @@ const ShowItems = ({ show }) => {
       className="show-item"
       onClick={() => getActiveShow(show.id)}
     >
+      
       <div className="show-item_img">
         <img
           src={show.image && show.image.medium ? show.image.medium : noImg}
@@ -26,6 +27,7 @@ const ShowItems = ({ show }) => {
         </div>
         <h3 className="title">{show.name ? show.name : "noName"}</h3>
       </div>
+      
     </Link>
   );
 };

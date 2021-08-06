@@ -5,17 +5,20 @@ import SearchPage from "./pages/SearchPage";
 import Header from "./components/layout/Header";
 
 import { ShowState } from "./context/ShowContext";
+import { AlertState } from "./context/AlertContext";
 const App = () => {
   return (
     <ShowState>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/search" component={SearchPage} />
-          <Route path="/shows/:id" component={ShowPage} />
-        </Switch>
-      </BrowserRouter>
+      <AlertState>
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route path="/" exact component={Homepage} />
+            <Route path="/search" component={SearchPage} />
+            <Route path="/shows/:id" component={ShowPage} />
+          </Switch>
+        </BrowserRouter>
+      </AlertState>
     </ShowState>
   );
 };
