@@ -5,7 +5,7 @@ import { ShowsContext } from "../../context/ShowContext";
 import noImg from "../../assets/images/no-img.png";
 const Show = (props) => {
   const { getActiveShow, activeShow, loading } = useContext(ShowsContext);
-  const { showImg, setShowImg } = useState(noImg);
+  const [  showImg, setShowImg ] = useState(noImg);
   useEffect(() => {
     if (props.match.params.id) {
       getActiveShow(props.match.params.id);

@@ -164,6 +164,7 @@ header {
 .navbar-link {
   font-size: 1.25rem;
   font-weight: bold;
+  float:right
 }
 .navbar-link.active {
   color: var(--color-primary);
